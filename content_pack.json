@@ -140,18 +140,18 @@
                     "condition_value": "^\\S+\\s+nginx:"
                 },
                 {
-                    "title": "Website",
-                    "type": "REGEX",
-                    "configuration": {
-                        "regex_value": "nginx:\\s+(\\S+)"
-                    },
-                    "converters": [],
-                    "order": 1,
-                    "cursor_strategy": "COPY",
-                    "target_field": "http_host",
-                    "source_field": "message",
                     "condition_type": "REGEX",
-                    "condition_value": "^\\S+\\s+nginx:"
+                    "condition_value": "^\\S+\\s+nginx:",
+                    "converters": [],
+                    "cursor_strategy": "COPY",
+                    "configuration": {
+                        "regex_value": "nginx:\\s+\\S+\\s+(\\S+)"
+                    },
+                    "extractor_type": "regex",
+                    "order": 1,
+                    "source_field": "message",
+                    "target_field": "http_host",
+                    "title": "HTTP host"
                 },
                 {
                     "title": "Remote User",
